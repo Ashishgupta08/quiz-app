@@ -1,0 +1,35 @@
+.nav{
+    background-color: var(--color-lavendar);
+}
+
+.active{
+    background-color: var(--color-blue-light);
+    color: var(--color-text);
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px){
+
+    .nav{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .active{
+        border-radius: 10px;
+        background-color: var(--color-blue-bg);
+        color: var(--color-black);
+        border-left-width: 5px;
+        border-color: var(--color-blue);
+    }
+
+    .nav-wrapper{
+        position:fixed;
+        left:0;
+        top:0;
+        width:18rem;
+        height:100vh;
+        background-color: var(--color-lavendar);
+    }
+    
+}

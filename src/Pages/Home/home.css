@@ -1,0 +1,25 @@
+.profile{
+    background-color: var(--color-lavendar);
+}
+
+.box-home{
+    background-color: var(--color-blue2);
+    color: var(--color-text);
+}
+
+.circle{
+    background-color: var(--color-blue-light);
+    width: 8rem;
+}
+
+.category{
+    overflow-x: scroll;
+}
+
+@media only screen and (min-width: 768px){
+
+    .padding-nav{
+        padding-left: 18rem;
+    }
+
+}

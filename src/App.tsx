@@ -1,11 +1,22 @@
 import React from 'react';
 import './App.css';
+import { Onboarding, Home, LeaderBoard, Profile, Login } from './Pages/index';
+import { Question } from './Components/index';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="mx-auto my-1 p-2 bg-gray-50 rounded-2xl shadow-lg">
-      <h1 className="mx-auto px-5 text-black">QUIZO - A Quiz App</h1>
+    <div>
+      <Routes>
+        <Route path='/' element={<Onboarding />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/quiz/:id' element={<Question />}></Route>
+        <Route path='/leaderBoard' element={<LeaderBoard />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+      </Routes>
     </div>
+
   );
 }
 

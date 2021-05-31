@@ -1,0 +1,9 @@
+.option-btn{
+    background-color: var(--color-text);
+    color: var(--color-primary);
+}
+
+.primary-btn{
+    background-color: var(--color-lavendar);
+    color: var(--color-black);
+}
