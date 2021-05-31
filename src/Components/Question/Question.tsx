@@ -9,7 +9,7 @@ export function Question() {
                 <p>Question - 5/20</p>
                 <p className=""> <MdTimer className="inline align-middle h-6 w-6" /> 00:30 </p>
             </div>
-            <div className="box py-4 px-4 my-4 mx-2 rounded-3xl">
+            <div className="box-home py-4 px-4 my-4 mx-2 rounded-3xl">
                 <p className="m-4">
                     What is the name of the Marvel Comic Legend who has made an
                     appearance in all the films of the MCU ?
