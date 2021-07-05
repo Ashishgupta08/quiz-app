@@ -15,7 +15,7 @@ export function Onboarding() {
                 <img src={rocket} alt="rocket" className="h-48 w-40 absolute right-0.5 top-10" />
             </div>
             <div className="mx-auto text-center">
-                <NavLink to='/login'>
+                <NavLink to='/home'>
                     <button className="py-4 px-10 w-56 border rounded-2xl text-2xl font-semibold inline focus:outline-none focus:ring-2 focus:ring-white-600 focus:ring-offset-2 btn">
                         Let's Play
                         <ImArrowRight2 className="inline ml-2" />

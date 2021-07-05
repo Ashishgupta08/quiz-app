@@ -27,5 +27,5 @@ input::placeholder {
 }
 
 .box{
-    min-height: 24rem;
+    /* min-height: 24rem; */
 }
