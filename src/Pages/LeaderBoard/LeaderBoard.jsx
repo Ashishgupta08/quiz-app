@@ -9,7 +9,7 @@ export function LeaderBoard() {
     return (
         <>
             <Nav />
-            <div className="padding-nav pb-16 md:pb-0">
+            <div className="padding-nav pb-20 md:pb-0">
                 <div className="profile p-4 m-4 flex items-center rounded-xl shadow-md">
                     <p className="text-lg"><b>Leader Board</b></p>
                 </div>
