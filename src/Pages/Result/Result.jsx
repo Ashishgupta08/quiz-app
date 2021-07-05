@@ -9,22 +9,25 @@ export function Result() {
     const { currentQuizState } = useCurrentQuiz();
     const { quizDispatch } = useQuiz();
     const { authState } = useAuth();
-    const { userState: { user } } = useUser();
+    const { userState: { user }, userDispatch } = useUser();
 
-    useEffect(()=>{
-        (async function(){
+    useEffect(() => {
+        (async function () {
             try {
-                await Promise.all([axios.patch("https://quiz-app-backend.ashishgupta08.repl.co/user/updateScore",{ score: { quizId: currentQuizState.currentQuiz._id, score: currentQuizState.score }} ,{ headers: { Authorization: authState.token } }), 
-                                                                axios.post("https://quiz-app-backend.ashishgupta08.repl.co/leaderBoard", { quizId: currentQuizState.currentQuiz._id, leaderBoard: { userId: user._id, score: currentQuizState.score} }, { headers: { Authorization: authState.token } })
-                                                            ])
-                const { data: { result } } = await axios.get("https://quiz-app-backend.ashishgupta08.repl.co/leaderBoard", { headers: { Authorization: authState.token } })
-                quizDispatch({ type: "LOAD-LEADERBOARD", payload: result })
+                await Promise.all([axios.patch("https://quiz-app-backend.ashishgupta08.repl.co/user/updateScore", { score: { quizId: currentQuizState.currentQuiz._id, score: currentQuizState.score } }, { headers: { Authorization: authState.token } }),
+                axios.post("https://quiz-app-backend.ashishgupta08.repl.co/leaderBoard", { quizId: currentQuizState.currentQuiz._id, leaderBoard: { userId: user._id, score: currentQuizState.score } }, { headers: { Authorization: authState.token } })
+                ])
+                const [leaderBoard, userData] = await Promise.all([axios.get("https://quiz-app-backend.ashishgupta08.repl.co/leaderBoard", { headers: { Authorization: authState.token } }),
+                axios.get("https://quiz-app-backend.ashishgupta08.repl.co/user/getUserData", { headers: { Authorization: authState.token } })
+                ])
+                quizDispatch({ type: "LOAD-LEADERBOARD", payload: leaderBoard.data.result })
+                userDispatch({ type: "LOAD", payload: userData.data.result })
             } catch (e) {
                 console.log(e.message)
             }
         }())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>

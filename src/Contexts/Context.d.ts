@@ -84,7 +84,7 @@ export type UserState = {
     "user": User | {};
 }
 export type UserContextType = { userState: userState; userDispatch: React.Dispatch }
-export type UserAction = { type: "LOAD", payload: User }
+export type UserAction = { type: "LOAD", payload: User } | { type: "UPDATE-SCORE", payload: UserScore[] }
 
 
 export type CurrentQuiz = {

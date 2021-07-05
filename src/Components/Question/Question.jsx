@@ -34,16 +34,16 @@ export function Question() {
         data
             ? currentQuizDispatch({ type: "UPDATE-SCORE", payload: true })
             : currentQuizDispatch({ type: "UPDATE-SCORE", payload: false })
+        currentQuizDispatch({ type: "ANSWERED" })
         if (currentQuizState.currentQuestion + 1 === currentQuizState.questionCount) {
             return navigate('/result');
         }
-        currentQuizDispatch({ type: "ANSWERED" })
         currentQuizDispatch({ type: "RESET-TIMER" })
         currentQuizDispatch({ type: "INCREMENT-QUESTION" })
     }
 
     return (
-        <div className="text-center">
+        <div className="text-center my-6">
             <div className="flex flex-row justify-between mt-8 mb-2 mx-6 font-semibold text-xl">
                 <p>Question - {currentQuizState.currentQuestion + 1}/{currentQuizState.questionCount}</p>
                 <p className=""> <MdTimer className="inline align-middle h-6 w-6" /> 00:{currentQuizState.timer} </p>
