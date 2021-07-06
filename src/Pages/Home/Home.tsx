@@ -31,7 +31,7 @@ export function Home() {
                         }
                     </div>
                 </div>
-                <div className="box-home my-2 mx-4 flex rounded-3xl shadow-md">
+                <div className="box-home my-6 mx-4 flex rounded-3xl shadow-md">
                     <div>
                         <img src={Trophy} alt="trophy" className="h-44 w-44" />
                     </div>
@@ -40,21 +40,21 @@ export function Home() {
                         <p className="text-sm">You are doing really well.</p>
                     </div>
                 </div>
-                <h2 className="mx-8 mt-4 text-xl font-extrabold">Trending Categories</h2>
-                <div className="category mx-4 flex flex-col justify-items-center">
-                    <div className="m-4 mb-4 text-center flex flex-col justify-center cursor-pointer" onClick={() => navigate(`/quiz/60e35d682c32d2025d2e52aa`)} >
+                <h2 className="mx-8 mt-8 text-xl font-extrabold">Trending Categories</h2>
+                <div className="category mx-4 pl-32 flex justify-evenly">
+                    <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e35d682c32d2025d2e52aa`)} >
                         <div className="circle rounded-full self-center">
                             <img src={Rocket} alt="rocket" className="h-32 w-32" />
                         </div>
                         <h3 className="text-lg font-bold m-1">Science</h3>
                     </div>
-                    <div className="m-4 text-center cursor-pointer flex flex-col justify-center" onClick={() => navigate(`/quiz/60e361532c32d2025d2e52dd`)}>
+                    <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e361532c32d2025d2e52dd`)}>
                         <div className="circle rounded-full self-center">
                             <img src={Note} alt="note" className="h-32 w-32" />
                         </div>
                         <h3 className="text-lg font-bold m-1">Cricket</h3>
                     </div>
-                    <div className="m-4 text-center cursor-pointer flex flex-col justify-center" onClick={() => navigate(`/quiz/60e364652c32d2025d2e5310`)}>
+                    <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e364652c32d2025d2e5310`)}>
                         <div className="circle rounded-full self-center">
                             <img src={Code} alt="code" className="h-32 w-32" />
                         </div>
