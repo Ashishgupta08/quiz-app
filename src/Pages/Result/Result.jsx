@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Nav } from '../../Components/index';
 import { useCurrentQuiz, useAuth, useUser, useQuiz } from '../../Contexts';
 import axios from 'axios';
+import 'react-notifications-component/dist/theme.css';
+import { store } from 'react-notifications-component';
 
 export function Result() {
 
@@ -23,7 +25,19 @@ export function Result() {
                 quizDispatch({ type: "LOAD-LEADERBOARD", payload: leaderBoard.data.result })
                 userDispatch({ type: "LOAD", payload: userData.data.result })
             } catch (e) {
-                console.log(e.message)
+                return store.addNotification({
+                    title: 'Umable to update the score.',
+                    message: e.message,
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             }
         }())
         // eslint-disable-next-line react-hooks/exhaustive-deps

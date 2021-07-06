@@ -4,11 +4,13 @@ import { Onboarding, Home, LeaderBoard, Profile, Login, Quiz, Result } from './P
 import { Question } from './Components';
 import { Route, Routes } from 'react-router-dom'
 import PrivateRoute from './PrivateRoutes/PrivateRoute'
+import ReactNotification from 'react-notifications-component'
 
 function App() {
 
   return (
     <div>
+      <ReactNotification />
       <Routes>
         <Route path='/' element={<Onboarding />}></Route>
         <Route path='/login' element={<Login />}></Route>

@@ -8,15 +8,15 @@ import { AuthProvider, QuizContextProvider, UserContextProvider, CurrentQuizProv
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <QuizContextProvider>
-          <UserContextProvider>
-            <CurrentQuizProvider>
-              <App />
-            </CurrentQuizProvider>
-          </UserContextProvider>
-        </QuizContextProvider>
-      </AuthProvider>
+        <AuthProvider>
+          <QuizContextProvider>
+            <UserContextProvider>
+              <CurrentQuizProvider>
+                <App />
+              </CurrentQuizProvider>
+            </UserContextProvider>
+          </QuizContextProvider>
+        </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

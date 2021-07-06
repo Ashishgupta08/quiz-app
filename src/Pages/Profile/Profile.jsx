@@ -4,6 +4,9 @@ import { useUser, useAuth } from '../../Contexts';
 import MaleAvtaar from '../../images/maleAvtaar.png';
 import FemaleAvtaar from '../../images/femaleAvtaar.png';
 import { useNavigate } from 'react-router';
+import 'react-notifications-component/dist/theme.css';
+import { store } from 'react-notifications-component';
+
 export function Profile() {
 
     const { userState: { user } } = useUser();
@@ -13,6 +16,18 @@ export function Profile() {
     const logout = () => {
         localStorage?.removeItem("login");
         authDispatch({ type: "LOGOUT" });
+        store.addNotification({
+            message: 'Successfully Logged Out.',
+            type: "success",
+            insert: "top",
+            container: "top-center",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+                duration: 1000,
+                onScreen: false
+            }
+        });
         navigate("/");
     }
 

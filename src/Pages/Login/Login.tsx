@@ -5,6 +5,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from '../../Contexts'
 import { LoginType } from './LoginType';
 import { loginReducer } from "../../Reducers/loginReducer";
+import 'react-notifications-component/dist/theme.css';
+import { store } from 'react-notifications-component';
 
 export function Login() {
 
@@ -17,7 +19,18 @@ export function Login() {
     async function loginHandler(data: { username: string, password: string }) {
         try {
             if (data.username === "" || data.password === "") {
-                console.log('Username or Password cannot be empty.')
+                return store.addNotification({
+                    message: 'UserName or password cannot be empty.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else {
                 const { data: { result } } = await axios.post("https://quiz-app-backend.ashishgupta08.repl.co/user/login", { username: data.username, password: data.password });
                 localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
@@ -26,11 +39,45 @@ export function Login() {
             }
         } catch (e) {
             if (e.response.status === 401) {
-                return console.log('Wrong Password.')
+                return store.addNotification({
+                    title: "Wrong Password!",
+                    message: 'Check your password and try  again.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else if (e.response.status === 404) {
-                return console.log('Check Username and Password and try again.')
+                return store.addNotification({
+                    message: 'Check Username and Password and try again.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else {
-                return console.log(e.message)
+                return store.addNotification({
+                    message: e.message,
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             }
         }
     }
@@ -38,11 +85,32 @@ export function Login() {
     async function signUpHandler(data: { name: string, gender: string, email: string, username: string, password: string, confirmPassword: string }) {
         try {
             if (data.username === "" || data.password === "" || data.confirmPassword === "" || data.email === "" || data.name === "") {
-                console.log('All fields are required.')
+                return store.addNotification({
+                    message: 'All fields are required.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else if (data.password !== data.confirmPassword) {
-                console.log('Password should be same.')
+                return store.addNotification({
+                    message: 'Password should be same.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else {
-                console.log(data)
                 const { data: { result } } = await axios.post("https://quiz-app-backend.ashishgupta08.repl.co/user/signup", { username: data.username, password: data.password, name: data.name, email: data.email, gender: data.gender });
                 localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: true, token: result }))
                 authDispatch({ type: "LOGIN", payload: result });
@@ -50,9 +118,33 @@ export function Login() {
             }
         } catch (e) {
             if (e.response.status === 409) {
-                return console.log('Failed to create account. Try again.')
+                return store.addNotification({
+                    title: "Something went wrong!",
+                    message: 'Failed to create account.',
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             } else {
-                return console.log(e.message)
+                return store.addNotification({
+                    title: "Something went wrong!",
+                    message: e.message,
+                    type: "danger",
+                    insert: "top",
+                    container: "top-center",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: false
+                    }
+                });
             }
         }
     }
