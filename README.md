@@ -7,7 +7,7 @@
 > * username : *admin* 
 > * password : *admin*
 
-<br />
+
 
 # Features
 * Login using JWT
@@ -22,14 +22,14 @@
 # Tech Stack
 
 
-## Front End
+### Front End
 * React JS
 * TypeScript
 * HTML5
 * CSS3
 * TailwindCSS
 
-## Back End
+### Back End
 * Express JS
 * MongoDB
 
