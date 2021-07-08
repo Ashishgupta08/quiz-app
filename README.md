@@ -4,9 +4,8 @@
 
 ### Test Credentials - 
 
->username : `admin`
-<br />
->password : `admin`
+> * username : *admin* 
+> * password : *admin*
 
 <br />
 
