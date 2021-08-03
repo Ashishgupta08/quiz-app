@@ -194,6 +194,10 @@ export function Login() {
                                         Login
                                     </button>
                                 </div>
+                                <p>Test Credentials - 
+                                    <li>Username - <b>admin</b></li>
+                                    <li>Password - <b>admin</b></li>
+                                </p>
                             </div>
                         }
                         {
