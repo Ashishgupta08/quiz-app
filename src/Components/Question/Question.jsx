@@ -43,7 +43,7 @@ export function Question() {
     }
 
     return (
-        <div className="text-center my-6">
+        <div className="text-center my-6 question">
             <div className="flex flex-row justify-between mt-8 mb-2 mx-6 font-semibold text-xl">
                 <p>Question - {currentQuizState.currentQuestion + 1}/{currentQuizState.questionCount}</p>
                 <p className=""> <MdTimer className="inline align-middle h-6 w-6" /> 00:{currentQuizState.timer} </p>

@@ -5,6 +5,7 @@ import { useQuiz } from '../../Contexts/QuizContext';
 export function LeaderBoard() {
 
     const { quizState: { leaderBoard } } = useQuiz();
+    const sortedLeaderboard = leaderBoard.map(quiz => { return { ...quiz, leaderBoard: quiz.leaderBoard.sort(function(a, b) { return b.score - a.score })}});
 
     return (
         <>
@@ -15,7 +16,7 @@ export function LeaderBoard() {
                 </div>
                 <div className="flex flex-col justify-around">
                     {
-                        leaderBoard.map(item => {
+                        sortedLeaderboard.map(item => {
                             return (
                                 <div key={item._id} className="answer-box p-4 m-4 flex flex-col items-center rounded-xl shadow-md">
                                     <label className="rounded-lg border-blue-500 border bg-white text-blue-500 px-4 py-1 outline-none">{item.quizId.quizName}</label>

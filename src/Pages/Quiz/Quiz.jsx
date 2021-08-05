@@ -19,7 +19,7 @@ export function Quiz() {
     return (
         <>
             <Nav />
-            <div className="quiz-page padding-nav pb-16 md:pb-0">
+            <div className="quiz-page pb-16 md:pb-0">
                 <div className="p-8 pb-6 mx-auto text-center flex flex-col md:pt-16 md:justify-center md:items-center">
                     <p className="font-bold text-4xl">{currentQuizState.currentQuiz.quizName}</p>
                 </div>

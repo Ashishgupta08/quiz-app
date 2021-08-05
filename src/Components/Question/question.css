@@ -17,3 +17,11 @@
     background-color: var(--color-bg);
     color: var(--color-text);
 }
+
+@media only screen and (min-width: 768px){
+
+    .question{
+        margin: 2.5rem 25rem;
+    }
+
+}

@@ -46,14 +46,14 @@ export function Result() {
     return (
         <>
             <Nav />
-            <div className="result padding-nav pb-16 md:pb-0">
-                <div className="p-8 pb-6 mx-auto  flex flex-col md:pt-16 md:justify-center md:items-center">
+            <div className="result pb-16 md:pb-0">
+                <div className="p-8 pb-6 mx-auto  flex flex-col md:pt-16">
                     <p className="font-bold self-center text-4xl">{currentQuizState.currentQuiz.quizName}</p>
                     <p className="font-medium text-xl my-4">Total Score - {currentQuizState.score}</p>
                     <p className="font-medium text-xl my-4">Answered - {currentQuizState.answered}</p>
                     <p className="font-medium text-xl my-4">Not Answered - {currentQuizState.notAnswered}</p>
                 </div>
-                <div>
+                <div className="md:flex md:flex-wrap">
                     {
                         currentQuizState.currentQuiz.questions.map(
                             que => {

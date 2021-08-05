@@ -37,6 +37,16 @@
 
     .padding-nav{
         padding-left: 18rem;
+        margin: 0 5rem;
+    }
+
+    .quiz-page{
+        padding-left: 18rem;
+    }
+
+    .result{
+        background-color: var(--color-text) !important;
+        padding-left: 18rem;
     }
 
 }
