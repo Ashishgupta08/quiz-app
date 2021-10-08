@@ -1,0 +1,52 @@
+.profile{
+    background-color: var(--color-lavendar);
+}
+
+.box-home{
+    background-color: var(--color-blue2);
+    color: var(--color-text);
+}
+
+.circle{
+    background-color: var(--color-lavendar);
+    width: 8rem;
+}
+
+.category{
+    overflow-x: scroll;
+}
+
+.quiz-page{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+.rules{
+    background-color: var(--color-lavendar);
+    color: var(--color-black);
+}
+
+.play{
+    background-color: var(--color-blue);
+    color: var(--color-text);
+}
+
+
+@media only screen and (min-width: 768px){
+
+    .padding-nav{
+        padding-left: 18rem;
+        margin: 0 5rem;
+    }
+
+    .quiz-page{
+        padding-left: 18rem;
+    }
+
+    .result{
+        background-color: var(--color-text) !important;
+        padding-left: 18rem;
+    }
+
+}

@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
+
 body {
+  font-family: 'Raleway', sans-serif;
   margin: 0;
+}
+
+:root{
+  --color-primary: #375DEC;
+  --color-blue: #4474F4;
+  --color-blue-light: #5589F9;
+  --color-blue2: #5076FF;
+  --color-blue-bg: #93C5FD;
+  --color-text: #F8F8F2;
+  --color-black: #000;
+  --color-lavendar: #DEE5FF;
+  --color-bg: #2D3748;
 }

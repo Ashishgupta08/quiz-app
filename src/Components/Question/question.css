@@ -1,0 +1,27 @@
+.option-btn{
+    background-color: var(--color-text);
+    color: var(--color-primary);
+}
+
+.primary-btn{
+    background-color: var(--color-lavendar);
+    color: var(--color-black);
+}
+
+.result{
+    background-color: var(--color-lavendar);
+    padding-bottom: 5rem !important;
+}
+
+.answer-box{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+@media only screen and (min-width: 768px){
+
+    .question{
+        margin: 2.5rem 25rem;
+    }
+
+}
