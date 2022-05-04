@@ -212,7 +212,7 @@ export function Login() {
                                             Male
                                         </label>
                                         <label className="m-0">
-                                            <input type="radio" name="gender" value="Feamle" className="m-0" onChange={(e) => { loginDispatch({ type: "SIGNUP-GENDER", payload: e.target.value }) }} />
+                                            <input type="radio" name="gender" value="Female" className="m-0" onChange={(e) => { loginDispatch({ type: "SIGNUP-GENDER", payload: e.target.value }) }} />
                                             Female
                                         </label>
                                     </div>

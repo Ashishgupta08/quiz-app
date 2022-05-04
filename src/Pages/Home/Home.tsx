@@ -1,8 +1,8 @@
 import React from 'react';
 import './home.css';
 import Trophy from '../../images/Trophy.png';
-import Note from '../../images/Note.png';
-import Rocket from '../../images/Rocket.png';
+import ipl from '../../images/ipl.png';
+import genpact from '../../images/genpact.png';
 import MaleAvtaar from '../../images/maleAvtaar.png';
 import FemaleAvtaar from '../../images/femaleAvtaar.png';
 import Code from '../../images/Code.png';
@@ -44,15 +44,15 @@ export function Home() {
                 <div className="category mx-4 pl-32 flex justify-evenly">
                     <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e35d682c32d2025d2e52aa`)} >
                         <div className="circle rounded-full self-center">
-                            <img src={Rocket} alt="rocket" className="h-32 w-32" />
+                            <img src={genpact} alt="rocket" className="h-32 w-32" />
                         </div>
-                        <h3 className="text-lg font-bold m-1">Science</h3>
+                        <h3 className="text-lg font-bold m-1">Genpact</h3>
                     </div>
-                    <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e361532c32d2025d2e52dd`)}>
+                    <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/627173e766e49304034e23a2`)}>
                         <div className="circle rounded-full self-center">
-                            <img src={Note} alt="note" className="h-32 w-32" />
+                            <img src={ipl} alt="note" className="h-32 w-32" />
                         </div>
-                        <h3 className="text-lg font-bold m-1">Cricket</h3>
+                        <h3 className="text-lg font-bold m-1">IPL - 2022</h3>
                     </div>
                     <div className="m-4 mb-4 text-center cursor-pointer" onClick={() => navigate(`/quiz/60e364652c32d2025d2e5310`)}>
                         <div className="circle rounded-full self-center">
