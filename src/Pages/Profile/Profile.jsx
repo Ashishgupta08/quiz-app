@@ -58,11 +58,11 @@ export function Profile() {
                 <div className="answer-box p-4 m-4 flex flex-col rounded-xl shadow-md">
                     <p className="rounded-lg border-blue-500 border bg-white text-blue-500 px-4 py-1 mb-2 outline-none">Your Scores</p>
                     {
-                        user.score.map(item => {
+                        user?.score && user?.score.map(item => {
                             return (
                                 <div key={item._id} className="flex justify-between mx-6 my-1">
-                                    <label>{item.quizId.quizName}</label>
-                                    <label>{item.score}</label>
+                                    <label>{item?.quizId?.quizName}</label>
+                                    <label>{item?.score}</label>
                                 </div>
                             )
                         })

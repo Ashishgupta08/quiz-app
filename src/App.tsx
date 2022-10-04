@@ -9,7 +9,7 @@ import ReactNotification from 'react-notifications-component'
 function App() {
 
   return (
-    <div>
+    <>
       <ReactNotification />
       <Routes>
         <Route path='/' element={<Onboarding />}></Route>
@@ -22,7 +22,7 @@ function App() {
         <PrivateRoute path='/leaderBoard' element={<LeaderBoard />} />
         <PrivateRoute path='/profile' element={<Profile />} />
       </Routes>
-    </div>
+    </>
   );
 }
 export default App;
